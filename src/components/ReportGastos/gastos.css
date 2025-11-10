@@ -1,0 +1,226 @@
+/* ===== Estilos generales ===== */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(165deg, #f0c2be, #f0e1bc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding-top: 80px;
+}
+
+h1 {
+  color: #6a1b9a;
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ===== Contenedor principal ===== */
+.container {
+  background: linear-gradient(165deg, #f0e1bc, #f0c2be);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+/* ===== Etiquetas y formularios ===== */
+label {
+  font-weight: bold;
+  color: #131213;
+}
+
+input[type="date"] {
+  margin: 15px 0;
+  padding: 8px;
+  border-radius: 8px;
+  border: 3px solid #9207f5;
+  outline: none;
+  transition: 0.3s;
+}
+
+input[type="date"]:focus {
+  border-color: #9c27b0;
+  box-shadow: 0px 0px 6px rgba(156, 39, 176, 0.5);
+}
+
+.container2 {
+  margin-top: 15px;
+  text-align: left;
+  padding: 10px;
+}
+
+.container2 label {
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+/* ===== Imagen logo ===== */
+img {
+  width: 120px;
+  height: auto;
+  margin-left: auto;
+}
+
+/* ===== Barra superior ===== */
+.barra-superior {
+  display: flex;
+  align-items: center;
+  padding: 8px 8px;
+  background: linear-gradient(to right, #f0e1bc, #f0c2be);
+  height: 65px;
+  box-shadow: 0 3px 5px rgba(26, 21, 21, 0.2);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 55px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* ===== Menú lateral ===== */
+.Menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(to bottom, #f0e1bc, #f0c2be);
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  transform: translateX(-100%); /* 🔹 Oculto por defecto */
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.lineas-check {
+  display: none;
+}
+
+/* Activar menú al hacer clic */
+input:checked ~ .Menu {
+  transform: translateX(0);
+  box-shadow: 0 0 15px #6C557A;
+}
+
+/* Estilos lista menú */
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  color: #6C557A;
+  font-weight: 500;
+  padding: 9px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s ease-out;
+}
+
+ul li:hover a {
+  color: #f0c2be;
+  background-color: #6C557A;
+  padding-left: 10px;
+  border-radius: 8px;
+}
+
+ul li a i {
+  color: #6C557A;
+  min-width: 25px;
+  text-align: center;
+}
+
+.Lineas {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 20px;
+  left: 15px;
+  z-index: 1001;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #E6D6AD;
+  box-shadow: 0 0 10px #6C557A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Lineas .common {
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: #6C557A;
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+.Lineas .top_line {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.Lineas .middle_line {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.Lineas .bottom_line {
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* Animación del botón al abrir */
+input:checked ~ .Lineas .top_line {
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(45deg);
+}
+
+input:checked ~ .Lineas .bottom_line {
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(-45deg);
+}
+
+input:checked ~ .Lineas .middle_line {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+/* ===== Botones ===== */
+button {
+  background: #e1bee7;
+  color: #4a148c;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #f0c2be;
+  color: #000;
+}

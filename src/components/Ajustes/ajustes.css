@@ -1,0 +1,247 @@
+/* ------------------ RESET ------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------ FONDO GENERAL DEL COMPONENTE ------------------ */
+.ajustes-fondo {
+  background-color: #CADBEC; /* 💙 Columbia Blue (de la paleta) */
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  padding-bottom: 40px;
+}
+
+/* ------------------ BARRA SUPERIOR ------------------ */
+.barra-superior {
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(90deg, #B6A999, #F4E1B6); /* Degradado suave */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.logo {
+  height: 38px;
+}
+
+/* ------------------ CONTENEDOR CENTRAL ------------------ */
+.contenedor-ajustes {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 120px; /* deja espacio por la barra fija */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ------------------ TÍTULO ------------------ */
+.Titulo {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-top: 100px;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px #E5DED3;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #B6A999;
+  width: 60%;
+  margin-bottom: 25px;
+}
+
+/* ------------------ CONTENEDOR PRINCIPAL ------------------ */
+.Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px; /* 🔹 Espaciado amplio entre cuadros */
+}
+
+/* ------------------ BOTÓN EDITAR PERFIL ------------------ */
+.btn-editar {
+  display: inline-block;
+  background-color: #F4E1B6;
+  color: black;
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.btn-editar:hover {
+  background-color: #F4E1B6;
+}
+
+/* ------------------ CUADROS DE OPCIONES ------------------ */
+.notificaciones,
+.opcion,
+.Datos,
+.actualizaciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F4E1B6;
+  width: 85%;
+  max-width: 450px;
+  height: 55px;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 10px 0; /* 🔹 separa visualmente los cuadros */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.notificaciones:hover,
+.opcion:hover,
+.Datos:hover,
+.actualizaciones:hover {
+  background-color: #E5DED3;
+  transform: scale(1.02);
+}
+
+/* ------------------ TEXTO E ICONOS ------------------ */
+.opcion span,
+.Datos span,
+.notificaciones span,
+.actualizaciones span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #333;
+  font-size: 15px;
+}
+
+.opcion span img,
+.Datos span img,
+.notificaciones span img,
+.actualizaciones span img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ------------------ BOTÓN CERRAR SESIÓN ------------------ */
+.btn-cerrar {
+  background: #B6A999;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  width: 85%;
+  max-width: 450px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 40px;
+  transition: 0.3s;
+}
+.btn-cerrar:hover {
+  background: #8c7f72;
+  transform: scale(1.03);
+}
+
+/* ------------------ SELECT IDIOMA ------------------ */
+select {
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+  background-color: #CADBEC;
+  color: #000;
+  border: none;
+  outline: none;
+}
+
+/* ------------------ SWITCH ON/OFF ------------------ */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #B6A999;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #F5F6F7;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #CADBEC;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 500px) {
+  .contenedor-ajustes {
+    max-width: 95%;
+    margin-top: 100px;
+  }
+  .notificaciones,
+  .opcion,
+  .Datos,
+  .actualizaciones,
+  .btn-cerrar {
+    width: 95%;
+    max-width: none;
+  }
+  .Titulo {
+    font-size: 28px;
+  }
+}
+/* === CORRECCIÓN DEL FONDO Y ESTILO GENERAL === */
+.ajustes-container {
+  background-color: #F7F3E3 !important; /* fuerza el fondo claro */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Si hay un body con color morado, sobreescríbelo también */
+body {
+  background-color: #F7F3E3 !important;
+}

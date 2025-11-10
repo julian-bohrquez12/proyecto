@@ -1,0 +1,307 @@
+/* ===================================================== */
+/* 🔹 ESTILOS GENERALES 🔹 */
+/* ===================================================== */
+
+* { 
+  margin: 0;              /* Elimina márgenes por defecto */
+  padding: 0;             /* Elimina rellenos por defecto */
+  box-sizing: border-box; /* Hace que el padding y border no sumen al tamaño total */
+}
+
+body {
+  background: black;                  /* Fondo negro para toda la página */
+  font-family: Arial, sans-serif;     /* Fuente general del sitio */
+}
+
+/* ===================================================== */
+/* 🔹 BARRA SUPERIOR 🔹 */
+/* ===================================================== */
+
+.barra-superior {
+  display: flex;                         /* Usa flexbox para alinear los elementos */
+  justify-content: space-between;        /* Espacia los elementos a los lados */
+  align-items: center;                   /* Centra verticalmente */
+  padding: 5px 1px;                      /* Espaciado interno */
+  background: linear-gradient(to right, #F4E1B6, #E5DED3); /* Fondo con degradado */
+  height: 65px;                          /* Altura de la barra */
+  box-shadow: 0 3px 2px black;         /* Sombra inferior */
+  border-bottom-left-radius: 13px;       /* Esquinas inferiores redondeadas */
+  border-bottom-right-radius: 55px;
+  position: fixed;                       /* Fija la barra en la parte superior */
+  top: 0;
+  left: 0;
+  width: 82%;                            /* Ocupa el 82% del ancho */
+  z-index: 10;                           /* Se muestra por encima de otros elementos */
+}
+
+.barra-superior .logo {
+  height: 77px;      /* Tamaño del logo */
+  margin-left: 84%;  /* Margen izquierdo */
+  margin-top: 8px;   /* Margen superior */
+}
+
+/* ===================================================== */
+/* 🔹 TÍTULO PRINCIPAL 🔹 */
+/* ===================================================== */
+
+.Titulo {
+  text-align: center;                                     /* Centra el texto */
+  font-size: 40px;                                        /* Tamaño grande */
+  font-weight: 400px;                                     /* Peso del texto */
+  color: #F4E1B6;                                         /* Color dorado */
+  margin-top: 80px;                                       /* Margen superior */
+  margin-bottom: 20px;                                    /* Margen inferior */
+  text-shadow: 1px 1px 2px, #adadad 0 0 1em, #aaaaaa 0 0 0.2em; /* Sombra decorativa */
+}
+
+/* Línea divisoria debajo del título */
+hr {
+  border: none;                       
+  border-top: 1px solid #411e02;      /* Línea marrón */
+  margin: 10px auto 20px auto;        /* Margen superior e inferior */
+  width: 70%;                         /* Ancho de la línea */
+  height: 2px;                        
+}
+
+/* ===================================================== */
+/* 🔹 SUBTÍTULOS 🔹 */
+/* ===================================================== */
+
+.subtitle {
+  font-size: 28px;        /* Tamaño mediano */
+  margin-bottom: 15px;    /* Espaciado debajo */
+  font-weight: bold;      /* Negrita */
+  color: #222;            /* Gris oscuro */
+  text-align: center;     /* Centrado */
+}
+
+/* ===================================================== */
+/* 🔹 SECCIÓN DE PRODUCTOS 🔹 */
+/* ===================================================== */
+
+.products {
+  margin-top: 10px;                 
+  display: flex;                    /* Distribuye los productos en fila */
+  justify-content: space-around;    /* Espacio entre los botones */
+  margin-bottom: 20px;              
+  text-align: center;               
+  flex-wrap: wrap;                  /* Permite que bajen de línea si no caben */
+  gap: 15px;                        /* Espacio entre botones */
+}
+
+.product-btn {
+  background: #E5DED3;              /* Fondo beige */
+  border: none;                     /* Sin borde */
+  padding: 10px;                    
+  border-radius: 12px;              /* Bordes redondeados */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* Sombra */
+  cursor: pointer;                  /* Cursor de mano */
+  transition: transform 0.2s;       /* Efecto suave al pasar el mouse */
+}
+
+.product-btn:hover {
+  transform: translateY(-2px);      /* Se eleva ligeramente al pasar el mouse */
+}
+
+.product-btn img {
+  width: 40px;           /* Tamaño de la imagen del producto */
+  height: 40px;
+  object-fit: contain;   /* Ajusta la imagen sin deformarla */
+}
+
+/* ===================================================== */
+/* 🔹 MODAL DE DETALLES DE PRODUCTO 🔹 */
+/* ===================================================== */
+
+.modal {
+  display: flex;                      
+  position: fixed;                    
+  top: 0;                             
+  left: 0;                            
+  width: 100%;                        
+  height: 100%;                       
+  background: rgba(0,0,0,0.5);        /* Fondo negro transparente */
+  justify-content: center;            
+  align-items: center;                
+  z-index: 100;                       
+}
+
+/* Contenido dentro del modal */
+.modal-contenido {
+  background: #e5ded3;         /* Fondo beige */
+  padding: 20px;              
+  border-radius: 8px;         
+  border: solid 2px black;    
+  width: 90%;                 
+  max-width: 300px;           
+  text-align: center;         
+  position: relative;         
+}
+
+/* Imagen del modal */
+.img-modal {
+  max-width: 150px;    
+  height: auto;        
+  margin: 15px auto;   
+  display: block;      
+}
+
+/* Botón de cierre del modal (X) */
+.cerrar {
+  position: absolute;  
+  top: 10px;           
+  right: 20px;         
+  font-size: 24px;     
+  cursor: pointer;     
+}
+
+/* ===================================================== */
+/* 🔹 MÉTODOS DE PAGO 🔹 */
+/* ===================================================== */
+
+.payments {
+  display: flex;                
+  flex-direction: column;       /* Coloca los botones uno debajo del otro */
+  align-items: center;          /* Centra horizontalmente */
+  justify-content: center;      /* Centra verticalmente */
+  gap: 15px;                    /* Espacio entre botones */
+  margin: 30px auto;            /* Centra el bloque en la página */
+  text-align: center;           
+  width: 100%;                  
+}
+
+/* Subtítulo de método de pago */
+h2 {
+  margin-top: 50px;             
+  text-align: center;           
+}
+
+/* Botones de pago (QR, Efectivo, Datáfono) */
+.pay-btn {
+  display: flex;                /* Permite alinear icono y texto */
+  align-items: center;          /* Centra verticalmente */
+  justify-content: center;      /* Centra horizontalmente */
+  gap: 10px;                    /* Espacio entre el icono y el texto */
+  width: 250px;                 
+  margin: 0 auto;               
+  background: #E5DED3;          
+  border: none;                 
+  padding: 15px;                
+  font-size: 16px;              
+  font-weight: bold;            
+  border-radius: 50px;          
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;              
+  transition: background 0.2s, transform 0.2s;
+}
+
+/* Iconos dentro del botón de pago */
+.pay-btn img {
+  width: 30px;           
+  height: 30px;          
+  object-fit: contain;   
+}
+
+/* Efecto al pasar el mouse */
+.pay-btn:hover {
+  background: #ffe0d6;   
+  transform: translateY(-2px);
+}
+
+/* ===================================================== */
+/* 🔹 MENÚ LATERAL FUNCIONAL 🔹 */
+/* ===================================================== */
+
+/* Oculta el checkbox que controla el menú */
+.lineas-check {
+  display: none;
+}
+
+/* Ícono de tres líneas (botón hamburguesa) */
+.Lineas {
+  position: fixed;            /* Fijo en la parte superior izquierda */
+  top: 20px;
+  left: 25px;
+  width: 35px;                /* Ancho del icono */
+  height: 25px;               /* Alto del icono */
+  display: flex;
+  flex-direction: column;     /* Coloca las líneas una debajo de otra */
+  justify-content: space-between; /* Espacio igual entre las tres líneas */
+  cursor: pointer;            /* Cambia el cursor a una mano */
+  z-index: 1000;              /* Por encima de todo */
+}
+
+/* Las tres líneas del icono */
+.common {
+  background-color: #000;     /* Color negro */
+  height: 4px;                /* Grosor de la línea */
+  width: 100%;
+  border-radius: 5px;         /* Bordes redondeados */
+  transition: all 0.3s ease;  /* Animación suave */
+}
+
+/* Animación del ícono cuando se hace clic */
+.lineas-check:checked + .Lineas .top_line {
+  transform: rotate(45deg) translate(6px, 6px); /* Gira la línea superior */
+}
+.lineas-check:checked + .Lineas .middle_line {
+  opacity: 0; /* Oculta la línea del medio */
+}
+.lineas-check:checked + .Lineas .bottom_line {
+  transform: rotate(-45deg) translate(7px, -6px); /* Gira la inferior */
+}
+
+/* Menú lateral (oculto por defecto) */
+.Menu {
+  position: fixed;             /* Fijo a la izquierda */
+  top: 0;
+  left: -250px;                /* Empieza fuera de pantalla */
+  width: 250px;                /* Ancho del menú */
+  height: 100%;                /* Ocupa toda la altura */
+  background-color: #F4E1B6;   /* Fondo dorado */
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.3); /* Sombra lateral */
+  transition: left 0.3s ease;  /* Deslizamiento suave */
+  z-index: 999;                /* Capa alta */
+  padding: 60px 20px 20px;     /* Espaciado interno */
+}
+
+/* Cuando el checkbox está activado, el menú aparece */
+.lineas-check:checked ~ .Menu {
+  left: 0; /* Mueve el menú a la vista */
+}
+
+/* Título dentro del menú */
+.menu_titulo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #3b2f2f;
+  text-align: center;
+}
+
+/* Lista de enlaces del menú */
+.Menu ul {
+  list-style: none; /* Sin viñetas */
+  padding: 0;
+}
+
+/* Cada opción del menú */
+.Menu ul li {
+  margin: 15px 0;
+}
+
+/* Enlaces del menú */
+.Menu ul li a {
+  text-decoration: none;  /* Sin subrayado */
+  color: #3b2f2f;         /* Marrón oscuro */
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s; /* Efecto suave al pasar el mouse */
+}
+
+/* Efecto hover en los enlaces */
+.Menu ul li a:hover {
+  background-color: #e0cfa7; /* Color más claro */
+}
